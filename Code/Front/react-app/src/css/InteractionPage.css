@@ -1,0 +1,547 @@
+
+/* 设置页面内容的居中布局 */
+.container {
+    max-height: 1400px;
+    max-width: 2000px;
+    width: 18s00px;
+    height: 1400px;
+    overflow-y: auto; /* 启用垂直滚动条 */
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+/* 表格样式 */
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 1000px;
+    table-layout: fixed;
+}
+
+table, th, td {
+    border: 1px solid #000;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* 按钮样式调整，增大字体和外观 */
+button {
+    padding: 5px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    width: 120px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}
+
+
+/* 炫酷的标题样式 */
+.cool-title {
+    font-size: 3em; /* 调整字体大小 */
+    font-weight: bold;
+    color: #333; /* 设置黑色字体 */
+    text-align: center;
+    padding: 5px 10px; /* 增加内边距 */
+    border-radius: 20px; /* 圆角效果 */
+    background: #d4e4f7; /* 渐变背景 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 添加柔和的阴影 */
+    margin-bottom: 20px; /* 与其他内容的间距 */
+    animation: glowing 2s infinite; /* 发光动画 */
+}
+
+/* 渐变发光动画 */
+@keyframes glowing {
+    0% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), 0 0 10px #ff7e5f, 0 0 20px #feb47b; }
+    50% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), 0 0 20px #ff7e5f, 0 0 30px #feb47b; }
+    100% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), 0 0 10px #ff7e5f, 0 0 20px #feb47b; }
+}
+
+/* 隐藏不需要的行 */
+.hidden {
+    display: none;
+}
+
+/* 评分按钮容器样式 */
+.score-buttons {
+    margin-top: 20px;
+}
+
+.score-buttons button {
+    margin: 5px;
+    width: 50px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.tree {
+    max-width: 800px; /* 设置树的最大宽度，可以根据需要调整 */
+    height: 800px;
+    max-height: 800px; /* 设置树的最大高度，可以根据需要调整 */
+    overflow: auto; /* 启用水平和垂直滚动条 */
+    border: 1px solid #ddd; /* 添加边框以区分容器 */
+    padding: 10px; /* 添加一些内边距 */
+    box-sizing: border-box;
+    margin: 20px auto;
+
+    display: flex;           /* 添加这行 */
+    flex-wrap: nowrap;       /* 防止子元素换行 */
+    overflow-x: auto; /* 添加这一行，以确保水平方向可以滚动 */
+    overflow: auto;
+}
+
+.tree ul {
+    position: relative;
+    padding-top: 20px; 
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    display: flex;           /* 添加这行 */
+    flex-wrap: nowrap;       /* 防止子元素换行 */
+}
+
+.tree li {
+    float: left;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+.tree li::before, .tree li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 1px solid #ccc;
+    width: 50%;
+    height: 43px;
+}
+
+.tree li::after {
+    right: auto; 
+    left: 50%;
+    border-left: 1px solid #ccc;
+}
+
+.tree li:only-child::after, .tree li:only-child::before {
+    display: none;
+}
+
+.tree li:only-child { padding-top: 0; }
+
+.tree li:first-child::before, .tree li:last-child::after {
+    border: 0 none;
+}
+
+.tree li:last-child::before {
+    right: 50%; /* 控制线的起始位置 */
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 0 0;
+    -webkit-border-radius: 0 5px 0 0;
+    -moz-border-radius: 0 5px 0 0;
+}
+
+.tree li:first-child::after {
+    border-radius: 5px 0 0 0;
+    left: 50%; /* 在这里调试左边距 */
+    -webkit-border-radius: 5px 0 0 0;
+    -moz-border-radius: 5px 0 0 0;
+}
+
+.tree ul ul::before {
+    content: '';
+    position: absolute; 
+    top: 0; 
+    left: 50%;
+    border-left: 1px solid #ccc;
+    width: 0;
+    height: 20px;
+}
+
+.tree ul ul:only-child::before {
+    display: none; /* 隐藏最下层唯一的垂直连接线 */
+}
+
+.tree li a {
+    border: 3px solid #ccc;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #666;
+    font-family: arial, verdana, tahoma;
+    font-size: 11px;
+    display: inline-block;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+.tree li a:hover, .tree li a:hover+ul li a {
+    background: #c8e4f8; color: #000; border: 3px solid #94a0b4;
+}
+
+.tree li a:hover+ul li::after, 
+.tree li a:hover+ul li::before, 
+.tree li a:hover+ul::before, 
+.tree li a:hover+ul ul::before {
+    border-color:  #94a0b4;
+}
+
+
+/* 主容器，用于两列布局 */
+.content-wrapper {
+    display: flex;
+    gap: 30px; /* 列之间的间距 */
+}
+
+/* 左侧第一列 */
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* 每个块之间的间距 */
+    flex-basis: 50%; /* 占据一半宽度 */
+}
+
+/* 右侧第二列 */
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* 每个块之间的间距 */
+    flex-basis: 50%; /* 占据一半宽度 */
+}
+
+/* 为左右两列的容器添加白色背景和阴影 */
+.left-column, .right-column {
+    background-color: #fff; /* 白色背景 */
+    padding: 20px; /* 内边距 */
+    border-radius: 8px; /* 圆角边框 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    height: 1030px;
+}
+
+/* 艺术风格标题 */
+.section-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.5em;
+    color: #4a90e2;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    background: linear-gradient(to right, #a0c1e0, #d4e4f7);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    border: 1px solid #d0e2f2;
+    letter-spacing: 1px;
+}
+
+/* 确保 infoContainer 的内容不会溢出 */
+#infoContainer .info-block {
+    background-color: #f7f8ff;
+    border-left: 4px solid #d9dfff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 并排的内容容器 */
+#infoContainer {
+    display: flex;
+    gap: 20px;
+    margin-top: 0px;
+    justify-content: center;
+}
+
+/* 每个内容块的样式 */
+.info-block {
+    width: 1000px;
+    height: 200px;
+    padding: 15px;
+    background-color: #f7f8ff;
+    border-left: 4px solid #d9dfff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+    color: #333333;
+    max-height: 200px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    text-align: left;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+/* 标题样式 */
+.info-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: -15px;
+    color: #333333;
+    text-align: center;
+}
+
+/* 问题部分的容器样式 */
+.question-section {
+    width: 1000px;
+    height: 240px;
+    padding: 15px;
+    background-color: #f7f8ff;
+    border-left: 4px solid #d9dfff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 0px; /* 与其他部分的间距 */
+}
+
+.question-title {
+    font-size: 1.2em;
+    margin-top: -10px;
+    margin-bottom: -20px;
+    color: #333333;
+    text-align: left;
+    padding: 10px;
+}
+
+/* 通用按钮样式 */
+.styled-button {
+    padding: 0px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #42A5F5, #1E88E5); /* 蓝色渐变背景 */
+    border: none;
+    border-radius: 8px; /* 圆角 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+    cursor: pointer;
+    transition: all 0.3s ease; /* 添加过渡效果 */
+    width: auto; /* 根据内容自动调整宽度 */
+    white-space: nowrap; /* 防止文字换行 */
+}
+
+.styled-button:disabled {
+    background: #cccccc; /* 禁用时的背景颜色 */
+    color: #666666; /* 禁用时的字体颜色 */
+    cursor: not-allowed; /* 禁用时的鼠标样式 */
+    box-shadow: none; /* 禁用时移除阴影 */
+}
+
+.styled-button:hover:not(:disabled) {
+    background: linear-gradient(135deg, #64B5F6, #2196F3); /* 悬停时蓝色渐变 */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* 悬停时阴影增大 */
+    transform: translateY(-2px); /* 悬停时微微上移 */
+}
+
+/* 两张图并列显示 */
+.chart-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: -20px;
+}
+
+.section-title {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+c/* 在 InteractionPage.css 中 */
+.top-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: nowrap; /* 确保不换行 */
+}
+
+.middle-section {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 20px;
+    flex-wrap: nowrap; /* 确保不换行 */
+}
+
+.description-block {
+    width: 300px;
+    height: auto;
+    max-height: 200px;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+/* 调整 chart-container 以适应新的布局 */
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 600px;
+}
+
+.group-table {
+    width: 950px;
+    font-size: 20px; /* 设置表格字体大小 */
+}
+
+.group-table th, .group-table td {
+    padding: 5px 10px; /* 减少单元格内边距 */
+    font-size: 20px; /* 调整字体大小，减少高度 */
+    text-align: center;
+}
+
+.group-table th {
+    background-color: #f0f0f0; /* 可选：表头背景色 */
+    font-weight: bold;
+}
+
+.group-table td {
+    border-top: 1px solid #ddd; /* 为单元格添加顶部边框，保持行间隔 */
+    line-height: 2.2; /* 设置较小的行高 */
+}
+
+canvas {
+    max-height: 320px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background: #fafafa;
+}
+
+.middle-results-section {
+    background-color: #f9f9f9; /* 背景色 */
+    border-radius: 12px; /* 圆角 */
+    padding: 20px;
+    padding-bottom: 0px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    margin-bottom: 20px; /* 与其他模块的间距 */
+    width: 1920px;
+}
+
+.middle-results-section .section-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.5em;
+    color: #4a90e2;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    background: linear-gradient(to right, #a0c1e0, #d4e4f7);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    border: 1px solid #d0e2f2;
+    letter-spacing: 1px;
+}
+
+.three-column-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    /*background-color: #f9f9f9; /* 整体背景色 */
+    border-radius: 10px;
+    /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 整体阴影 */
+    margin-bottom: 20px; /* 与其他内容的间距 */
+    margin-left: -30px;
+    width: 1800px;
+    height: 460px;
+}
+
+.three-column-section .column {
+    flex: 1; /* 每个子项占据同样宽度 */
+    margin: 0 30px; /* 每列之间的间距 */
+    background-color: #fff; /* 每列的背景色 */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 每列的阴影效果 */
+}
+
+/* 图表的 canvas */
+#distanceChart {
+    width: 100px;
+    height: 260px; /* 可根据需要调整高度 */
+}
+
+/* PreferenceSpace 的高度和宽度 */
+.PreferenceSpace {
+    width: 100%;
+    height: 200px; /* 可根据需要调整 */
+}
+
+/* 表格样式 */
+.table-container {
+    width: 380px;
+    height: 260px;
+    border-collapse: collapse;
+    background-color: transparent;
+    border: none;
+}
+
+/* 表格样式 */
+.table-container table {
+    margin: 0px;
+    width: 380px;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+.table-container th, .table-container td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.table-container th {
+    background-color: #f0f0f0; /* 表头背景色 */
+    font-weight: bold;
+}
+
+.car-table {
+    width: 170px;
+    border-collapse: collapse;
+    margin: -8px;
+    margin-top: -10px;
+    margin-bottom: 0px;
+}
+
+.car-table th, .car-table td {
+    border: 1px solid #ddd;
+    padding: 0px;
+    text-align: center;
+    font-size: 1.0em;
+}
+
+.car-table th {
+    font-weight: bold;
+}
+
+.car-table td {
+    background-color: #fff;
+}
+
+pp {
+    height: 100px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}

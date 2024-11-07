@@ -1,0 +1,107 @@
+.text-t-align {
+    text-align: justify;
+    /* 如果你想要在最后一行左对齐，可以使用以下CSS */
+    text-align-last: left;
+}
+
+.toggleButton {
+    background: none;      /* 去除默认的背景 */
+    border: none;          /* 去除边框 */
+    cursor: pointer;       /* 设置鼠标手势为"手" */
+    outline: none;         /* 去除焦点时的轮廓 */
+    color: inherit;        /* 使用父元素的文字颜色 */
+    padding: 0;            /* 去除内边距 */
+    font-family: inherit;  /* 使用父元素的字体 */
+    font-size: inherit;    /* 使用父元素的字体大小 */
+}
+
+.foldText {
+    color: blue;           /* 为"fold"设置蓝色 */
+}
+
+.modern-btn {
+    background-color: #285584;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s; /* 渐变效果 */
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* 阴影效果 */
+}
+
+.modern-btn:hover {
+    background-color: #597fa6;
+    color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 1); /* 悬浮时的阴影效果 */
+}
+
+.modern-btn:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* 点击时的阴影效果 */
+    transform: translateY(2px); /* 点击时轻微的下移效果 */
+}
+
+.choose-btn {
+    background-color: #285584;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 1px 7px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s; /* 渐变效果 */
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* 阴影效果 */
+}
+
+.choose-btn:hover {
+    background-color: #597fa6;
+    color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 1); /* 悬浮时的阴影效果 */
+}
+
+.choose-btn:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* 点击时的阴影效果 */
+    transform: translateY(2px); /* 点击时轻微的下移效果 */
+}
+
+.custom-radio-spacing {
+    margin-right: 10rem; /* 或根据需要设置其他的值 */
+}
+
+.scrollable-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.scrollable-item {
+    flex: 0 0 auto;   /* 不允许子项缩放，保持其原始尺寸 */
+    margin: 0 5px;   /* 为每个项目提供一些间距 */
+}
+
+.scrollable2-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.scrollable2-item {
+    flex: 0 0 auto;   /* 不允许子项缩放，保持其原始尺寸 */
+    margin: 0 5px;   /* 为每个项目提供一些间距 */
+}
+
+.preserve-newlines {
+    white-space: pre;
+    text-align: justify;
+    /* 如果你想要在最后一行左对齐，可以使用以下CSS */
+    text-align-last: left;
+}
