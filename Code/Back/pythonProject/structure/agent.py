@@ -6,7 +6,7 @@ from openai import OpenAI
 async def get_response(messages):
     client = OpenAI(
         # 若没有配置环境变量，请用百炼API Key将下行替换为：api_key="sk-xxx",
-        api_key="sk-d52b311c5f89482eb9b5a2f3924a1f18",
+        api_key="sk-xxx",
         base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"  # 填写DashScope SDK的base_url
     )
 
